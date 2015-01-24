@@ -7,7 +7,7 @@
  */
 
 (function($){
-	if(typeof($.fn.lcweb_switch) != 'undefined') {return false;} // prevent dmultiple scripts inits
+	if(typeof($.fn.lc_switch) != 'undefined') {return false;} // prevent dmultiple scripts inits
 	
 	$.fn.lc_switch = function(on_text, off_text) {
 
