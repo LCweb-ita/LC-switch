@@ -7,11 +7,11 @@ Give a modern and flat look to your applications and take advantage of events an
 
 Requires at least jQuery v1.4.2 and supports all browsers (yes, also old IE, up to version 7)
 
-For **documentation** and usage check:
-http://www.lcweb.it/lc-switch
+For **documentation** and usage notes check:
+http://www.lcweb.it/lc-switch-jquery-plugin
 
 
 
 * * *
 
-Copyright (c) Luca Montanari 
+Copyright (c) Luca Montanari - LCweb 
