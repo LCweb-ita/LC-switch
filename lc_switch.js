@@ -58,11 +58,7 @@
                     var $wrap = $(this).parents('.lcs_wrap');
                     var $input = $wrap.find('input');
                     var lc_val=$wrap.find('input').prop('checked');
-                    if(lc_val==0){
-                        lc_val=1;
-                    }else{
-                        lc_val=0;
-                    }
+                   lc_val==0? lc_val=1:lc_val=0;
 
                     if(typeof($.fn.prop) == 'function') {
                         $wrap.find('input').prop('checked', lc_val);
