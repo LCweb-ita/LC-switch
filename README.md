@@ -14,4 +14,4 @@ http://www.lcweb.it/lc-switch
 
 * * *
 
-Copyright (c) Luca Montanari 
+Copyright &copy; Luca Montanari 
