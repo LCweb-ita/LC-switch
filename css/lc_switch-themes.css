@@ -1,0 +1,93 @@
+/* Color contrast - from Bootstrap 4 utilities - no change*/
+/* background + text contrast*/
+.lc-black ~ .lcs_switch.lcs_on {
+  background: #000;
+  box-shadow: 0 0 2px black inset; }
+  .lc-black ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-blue ~ .lcs_switch.lcs_on {
+  background: #268fff;
+  box-shadow: 0 0 2px #0069d9 inset; }
+  .lc-blue ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-blue-gray ~ .lcs_switch.lcs_on {
+  background: #78909c;
+  box-shadow: 0 0 2px #546973 inset; }
+  .lc-blue-gray ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-cyan ~ .lcs_switch.lcs_on {
+  background: #3ab0c3;
+  box-shadow: 0 0 2px #287b88 inset; }
+  .lc-cyan ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-gray ~ .lcs_switch.lcs_on {
+  background: #c4bdb9;
+  box-shadow: 0 0 2px #a1968f inset; }
+  .lc-gray ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #111; }
+
+.lc-gray-dark ~ .lcs_switch.lcs_on {
+  background: #5d5552;
+  box-shadow: 0 0 2px #34302e inset; }
+  .lc-gray-dark ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-green ~ .lcs_switch.lcs_on {
+  background: #48b461;
+  box-shadow: 0 0 2px #327d44 inset; }
+  .lc-green ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-indigo ~ .lcs_switch.lcs_on {
+  background: #7d34f4;
+  box-shadow: 0 0 2px #560bd0 inset; }
+  .lc-indigo ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-orange ~ .lcs_switch.lcs_on {
+  background: #fd9137;
+  box-shadow: 0 0 2px #e56902 inset; }
+  .lc-orange ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #111; }
+
+.lc-pink ~ .lcs_switch.lcs_on {
+  background: #eb5b9d;
+  box-shadow: 0 0 2px #de1b75 inset; }
+  .lc-pink ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-purple ~ .lcs_switch.lcs_on {
+  background: #855eca;
+  box-shadow: 0 0 2px #5e36a5 inset; }
+  .lc-purple ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-red ~ .lcs_switch.lcs_on {
+  background: #e15361;
+  box-shadow: 0 0 2px #c52232 inset; }
+  .lc-red ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #fff; }
+
+.lc-teal ~ .lcs_switch.lcs_on {
+  background: #41d1a7;
+  box-shadow: 0 0 2px #269f7c inset; }
+  .lc-teal ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #111; }
+
+.lc-white ~ .lcs_switch.lcs_on {
+  background: #fff;
+  box-shadow: 0 0 2px #d9d9d9 inset; }
+  .lc-white ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #111; }
+
+.lc-yellow ~ .lcs_switch.lcs_on {
+  background: #ffca2c;
+  box-shadow: 0 0 2px #dfa700 inset; }
+  .lc-yellow ~ .lcs_switch.lcs_on .lcs_label_on {
+    color: #111; }
+
+/*# sourceMappingURL=lc_switch-themes.css.map */

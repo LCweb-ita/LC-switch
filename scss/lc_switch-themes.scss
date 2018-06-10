@@ -1,0 +1,66 @@
+/* https://codepen.io/migli/pen/QaGNVp*/
+
+$black: #000 !default;
+$blue-gray: #78909c !default;
+$blue: #268fff !default;
+$cyan: #3ab0c3 !default;
+$gray-dark: #5d5552 !default;
+$gray: #c4bdb9 !default;
+$green: #48b461 !default;
+$indigo: #7d34f4 !default;
+$orange: #fd9137 !default;
+$pink: #eb5b9d !default;
+$purple: #855eca !default;
+$red: #e15361 !default;
+$teal: #41d1a7 !default;
+$white: #fff !default;
+$yellow: #ffca2c !default;
+
+$colors: () !default;
+$colors: map-merge(
+
+    (
+        'black': $black,
+        'blue': $blue,
+        'blue-gray': $blue-gray,
+        'cyan': $cyan,
+        'gray': $gray,
+        'gray-dark': $gray-dark,
+        'green': $green,
+        'indigo': $indigo,
+        'orange': $orange,
+        'pink': $pink,
+        'purple': $purple,
+        'red': $red,
+        'teal': $teal,
+        'white': $white,
+        'yellow': $yellow
+    ),
+    $colors
+);
+
+/* Color contrast - from Bootstrap 4 utilities - no change*/
+@function color-yiq($color) {
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);
+
+    $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+    @if ($yiq >= 150) {
+        @return #111;
+    } @else {
+        @return #fff;
+    }
+}
+
+/* background + text contrast*/
+@each $color, $value in $colors {
+    .lc-#{$color} ~ .lcs_switch.lcs_on {
+        background: $value;
+        box-shadow: 0 0 2px darken($value, 15%) inset;
+        .lcs_label_on {
+            color: color-yiq($value);
+        }
+    }
+}
