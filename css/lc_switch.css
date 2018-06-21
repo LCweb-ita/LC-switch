@@ -24,13 +24,18 @@
 	position: relative;
 }
 
+.lcs_label_wrap {
+	padding-top: 7px;
+	margin-bottom: 1em !important;
+}
+
 .lcs_wrap {
 	display: inline-block;
 	direction: ltr;
 	height: 28px;
 	vertical-align: middle;
 	margin-right: 0.5em;
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 .lcs_wrap ~ label {
 	display: inline-block;

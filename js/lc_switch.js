@@ -137,6 +137,17 @@
 							}
 						});
 
+					if (
+						$(this)
+							.parent('.lcs_wrap')
+							.parent('label')[0]
+					) {
+						$(this)
+							.parent('.lcs_wrap')
+							.parent('label')
+							.addClass('lcs_label_wrap');
+					}
+
 					// if no container for each radio|checkbox
 					if ($('.lcs_wrap ~ label ~ .lcs_wrap')[0]) {
 						$('.lcs_wrap').each(function() {
