@@ -1,8 +1,39 @@
+.has-switch {
+	/*  main label */
+	line-height: 26px;
+	vertical-align: top;
+}
+
+.has-switch ~ div label,
+.has-switch ~ div div {
+	padding-left: 0 !important;
+	margin-left: 0 !important;
+}
+
+.has-switch ~ div .form-check:not(.form-check-inline) {
+	margin-bottom: 0.75em;
+}
+
+.has-switch ~ div label:not(:last-child),
+.lcs_wrap ~ label:not(:last-child) {
+	margin-right: 2em;
+}
+
+.lcs_main_wrap {
+	display: inline-block;
+	position: relative;
+}
+
 .lcs_wrap {
 	display: inline-block;
 	direction: ltr;
 	height: 28px;
 	vertical-align: middle;
+	margin-right: 0.5em;
+	margin-bottom: 1.5em;
+}
+.lcs_wrap ~ label {
+	display: inline-block;
 }
 .lcs_wrap input {
 	display: none;

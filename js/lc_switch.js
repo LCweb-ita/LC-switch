@@ -121,26 +121,42 @@
 						.parent()
 						.find('.lcs_switch')
 						.addClass('lcs_' + $(this).attr('type') + '_switch');
+
+					// Trigger Events
+					$(this)
+						.parent()
+						.find('.lcs_switch:not(.lcs_disabled)')
+						.on('change click tap', function(e) {
+							if ($(this).hasClass('lcs_on')) {
+								if (!$(this).hasClass('lcs_radio_switch')) {
+									// not for radio
+									$(this).lcs_off();
+								}
+							} else {
+								$(this).lcs_on();
+							}
+						});
+
+					// if no container for each radio|checkbox
+					if ($('.lcs_wrap ~ label ~ .lcs_wrap')[0]) {
+						$('.lcs_wrap').each(function() {
+							if (
+								$(this)
+									.parent()
+									.find('.lcs_wrap ~ label ~ .lcs_wrap').length > 0 ||
+								$(this).prev('.lcs_main_wrap').length > 0
+							) {
+								if ($(this).parent('.lcs_main_wrap').length != 1) {
+									$(this)
+										.next('label')
+										.andSelf()
+										.wrapAll('<div class="lcs_main_wrap"></div>');
+								}
+							}
+						});
+					}
 				}
 			}
 		});
 	};
-
-	// handlers
-	$(document).ready(function() {
-		// setTimeout forces to wait for the end of the execution of the previous code
-		setTimeout(function() {
-			// on click
-			$('.lcs_switch:not(.lcs_disabled)').on('change click tap', function(e) {
-				if ($(this).hasClass('lcs_on')) {
-					if (!$(this).hasClass('lcs_radio_switch')) {
-						// not for radio
-						$(this).lcs_off();
-					}
-				} else {
-					$(this).lcs_on();
-				}
-			});
-		}, 0);
-	});
 })(jQuery);
