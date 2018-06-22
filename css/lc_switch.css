@@ -6,8 +6,8 @@
 
 .has-switch ~ div label,
 .has-switch ~ div div {
-	padding-left: 0 !important;
 	margin-left: 0 !important;
+	padding-left: 0 !important;
 }
 
 .has-switch ~ div .form-check:not(.form-check-inline) {
@@ -22,11 +22,42 @@
 .lcs_main_wrap {
 	display: inline-block;
 	position: relative;
+	min-width: 100px;
+	padding-right: 20px;
+}
+.form-horizontal .lcs_label_wrap {
+	padding-top: 7px;
 }
 
-.lcs_label_wrap {
-	padding-top: 7px;
-	margin-bottom: 1em !important;
+.lcs_main_wrap > .lcs_wrap {
+	margin-top: 0;
+	/* min-width: 100px; */
+}
+
+.material-form .lcs_main_wrap {
+	padding-top: 1.5em;
+}
+
+.material-form .lcs_wrap {
+	margin-top: 1.25em;
+}
+
+.material-form .has-switch ~ div[class^='col-'] radio {
+	padding-top: 11px;
+}
+.material-form .lcs_main_wrap > .lcs_wrap {
+	padding-top: 0;
+}
+
+.material-form .main-label.has-switch ~ .lcs_wrap {
+	padding-top: 20px;
+	height: 48px;
+}
+
+.material-form .lcs_wrap ~ label:not(.main-label) {
+	top: 7px;
+	padding-left: 0;
+	white-space: nowrap;
 }
 
 .lcs_wrap {
@@ -35,10 +66,10 @@
 	height: 28px;
 	vertical-align: middle;
 	margin-right: 0.5em;
-	margin-bottom: 1em;
 }
 .lcs_wrap ~ label {
 	display: inline-block;
+	padding-top: 11px;
 }
 .lcs_wrap input {
 	display: none;
