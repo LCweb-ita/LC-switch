@@ -122,7 +122,7 @@
 	$(document).ready(function() {
 		
 		// on click
-		$(document).delegate('.lcs_switch:not(.lcs_disabled)', 'click tap', function(e) {
+		$(document).on('click tap', '.lcs_switch:not(.lcs_disabled)', function(e) {
 
 			if( $(this).hasClass('lcs_on') ) {
 				if( !$(this).hasClass('lcs_radio_switch') ) { // not for radio
@@ -135,7 +135,7 @@
 		
 		
 		// on checkbox status change
-		$(document).delegate('.lcs_wrap input', 'change', function() {
+		$(document).on('change', '.lcs_wrap input', function() {
 
 			if( $(this).is(':checked') ) {
 				$(this).lcs_on();
