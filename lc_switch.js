@@ -54,6 +54,8 @@
 				if( $wrap.find('.lcs_switch').hasClass('lcs_radio_switch') ) {
 					
 					var f_name = $input.attr('name');
+					// escape f_name, source: http://learn.jquery.com/using-jquery-core/faq/how-do-i-select-an-element-by-an-id-that-has-characters-used-in-css-notation/
+					f_name = f_name.replace( /(:|\.|\[|\]|,|=|@)/g, '\\$1' );
 					$wrap.parents('form').find('input[name='+f_name+']').not($input).lcs_off();	
 				}
             });
