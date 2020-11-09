@@ -129,7 +129,10 @@
 				if(disabled) {
 					status_classes += ' lcs_disabled';
 				} 
-			   
+				if ($(this).data('class'))
+				{
+					status_classes += ' ' + $(this).data('class');
+				}			   
 			   
 				// wrap and append
 				var structure = 
