@@ -12,10 +12,23 @@
     </style>
     
     
+    
+    
+    <!-- //////////////////////////////////////////////// -->
+    <!-- REQUIRED ELEMENTS -->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="lc_switch.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="lc_switch.css">
+    
+    <!-- //////////////////////////////////////////////// -->
+    
+    
+    
     <style>
 	#second_div{
         width: 90%; 
-        max-width: 700px; 
+        max-width: 600px; 
         min-width: 340px; 
         margin: 50px auto 0; 
         background: #f3f3f3; 
@@ -29,21 +42,18 @@
     }
     #third_div {
         width: 90%; 
-        max-width: 700px; 
+        max-width: 600px; 
         min-width: 340px; 
-        margin: 30px auto;	
+        margin: 30px auto 0;	
     }
 	#third_div small {
 		float: right;
+		color: #aaa;
+		cursor: pointer;
 		padding-top: 5px;	
 	}
-    small {
-        color: #929292;
-		cursor: pointer;
-        font-size: 90%;
-    }
 	#third_div ul {
-		padding: 15px 0;	
+		padding-left: 12px;	
 		max-height: 200px;
 		overflow: auto;
 	}
@@ -52,16 +62,10 @@
 		font-size: 14px;
 		line-height: normal;
 		margin: 7px 0;	
-        padding: 6px 2px;
-        margin: 0;
-        transition: all .2s ease;
 	}
-    #third_div li:hover {
-        background-color: #f3f3f3;    
-    }
 	#third_div li em {
 		display: inline-block;
-		width: 200px;
+		width: 130px;
 		color: #555;
 		font-style: normal;	
 	}
@@ -76,7 +80,7 @@
                 <img id="logo" src=" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAlCAMAAAD7q3BLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAxQTFRFS1NFfsJCx8jKNDQ0SyWmjgAAAAR0Uk5T////AEAqqfQAAACySURBVHja7JTLFsQgCEOD/P8/jw9EgjiLWU88XQi3sSoUSgJaQwrRRNqQ4EWgbQEVcfKTuQgwEGxQGZANXnlnUCzAS0Hf+WXTB3lA1vDAPBxHEMWbWnM+bnFXse1g2ZnOBjshlhuPbPVZIIzRk7+JGYnAr4R8J/RPXGcaxXd77i71JxHi7+pVY0KMEVTudKXji69aj5WVidUvSgwRiH1bEMi9n4jc+26zCdT/ICdi9CPAAHRlCGHRLtsqAAAAAElFTkSuQmCC" />
                 LC Switch
             </h2>
-            <h4>Superlight javascript plugin improving forms look and functionality, by <a href="https://lcweb.it" target="_blank">LCweb</a></h4>
+            <h4>Superlight jQuery plugin improving forms look and functionality, by <a href="https://lcweb.it" target="_blank">LCweb</a></h4>
             
             <svg width="100%" height="100%">
                 <pattern id="pattern-cubes" x="0" patternUnits="userSpaceOnUse" viewBox="0 0 10 16" height="100" width="116" y="68">
@@ -108,20 +112,16 @@
                     <p><input type="checkbox" name="check-2" value="2" class="lcs_check" disabled="disabled" autocomplete="off" /></p>
 
                     <p><input type="checkbox" name="check-3" value="3" class="lcs_check lcs_tt1" checked="checked" autocomplete="off" /></p>
-                    
-                    <p><br/><small id="enable_ckb">(enable all)</small> &nbsp; <small id="disable_ckb">(disable all)</small></p>
                 </div>
 
                 <div style="float: right; width: 50%;">
-                    <p style="padding-bottom: 13px;"><em>Radio<br/>(compact mode + custom color)</em></p>
+                    <p style="padding-bottom: 13px;"><em>Radio</em></p>
 
                     <p><input type="radio" name="radio-1" value="1" class="lcs_check lcs_tt2" autocomplete="off" /></p>
 
                     <p><input type="radio" name="radio-1" value="2" class="lcs_check lcs_tt2" disabled="disabled" autocomplete="off" /></p>
 
                     <p><input type="radio" name="radio-1" value="3" class="lcs_check lcs_tt2" checked="checked" autocomplete="off" /></p>
-                    
-                    <p><br/><small id="enable_radio">(enable all)</small> &nbsp; <small id="disable_radio">(disable all)</small></p>
                 </div>
                 </form>
                 <div style=" clear: both;"></div>
@@ -147,85 +147,8 @@
     
     <!-- //////////////////////////////////////////////// -->
     <!-- REQUIRED JAVASCRIPT -->
-    
-    
-    <script src="lc_switch.min.js" type="text/javascript"></script>
-    
     <script type="text/javascript">
-    const checkboxes = document.querySelectorAll('input[type=checkbox]'),
-          radios = document.querySelectorAll('input[type=radio]'); 
-    
-    // initialization    
-    checkboxes.lc_switch();
-    radios.lc_switch({
-        compact_mode : true,
-        on_color : 'teal',
-    }); 
-        
-    
-    
-    // enable/disable
-    document.getElementById('enable_ckb').addEventListener('click', () => { checkboxes.lcs_enable(); });    
-    document.getElementById('disable_ckb').addEventListener('click', () => { checkboxes.lcs_disable(); });    
-        
-    document.getElementById('enable_radio').addEventListener('click', () => { radios.lcs_enable(); });    
-    document.getElementById('disable_radio').addEventListener('click', () => { radios.lcs_disable(); });        
-        
-        
-        
-    // events log
-    const log_wrap = document.querySelector('#third_div ul');
-       
-    const toLeadingZero = (val) => {
-        return (val.toString().length < 2) ? '0'+val : val;    
-    };
-        
-    const getTime = () => {
-        const d = new Date;
-        return '('+ toLeadingZero(d.getHours()) +':'+ toLeadingZero(d.getMinutes()) +':'+ toLeadingZero(d.getSeconds()) +')';
-    };
-        
-    document.querySelectorAll('input').forEach(function(el) {
-        const subj = el.getAttribute('type') +' #'+ el.value; 
-        
-        el.addEventListener('lcs-statuschange', (e) => {
-            let status = (el.checked) ? 'checked' : 'unchecked';
-            status += (el.disabled) ? ' disabled' : ' enabled';
-            
-            log_wrap.innerHTML = '<li><em>'+ getTime() +' [lcs-statuschange]</em>'+ subj +' changed status: '+ status +'</li>' + log_wrap.innerHTML;     
-        });
-        
-        el.addEventListener('lcs-on', (e) => {
-            const status = (el.checked) ? 'checked' : 'unchecked';
-            log_wrap.innerHTML = '<li><em>'+ getTime() +' [lcs-on]</em>'+ subj +' changed status: '+ status +'</li>' + log_wrap.innerHTML;     
-        });
-        
-        el.addEventListener('lcs-off', (e) => {
-            const status = (el.checked) ? 'checked' : 'unchecked';
-            log_wrap.innerHTML = '<li><em>'+ getTime() +' [lcs-off]</em>'+ subj +' changed status: '+ status +'</li>' + log_wrap.innerHTML;     
-        });
-        
-        el.addEventListener('lcs-enabled', (e) => {
-            const status = (el.disabled) ? 'disabled' : 'enabled';
-            log_wrap.innerHTML = '<li><em>'+ getTime() +' [lcs-enabled]</em>'+ subj +' changed status: '+ status +'</li>' + log_wrap.innerHTML;     
-        });
-        
-        el.addEventListener('lcs-disabled', (e) => {
-            const status = (el.disabled) ? 'disabled' : 'enabled';
-            log_wrap.innerHTML = '<li><em>'+ getTime() +' [lcs-disabled]</em>'+ subj +' changed status: '+ status +'</li>' + log_wrap.innerHTML;     
-        });
-    });
-        
-    
-    // clear events log
-    document.querySelector('#third_div small').addEventListener('click', () => {
-        log_wrap.innerHTML = '';        
-    });
-        
-        
-    //$('input')[0].lc_switch();    
-        
-    /*$(document).ready(function(e) {
+    $(document).ready(function(e) {
         $('input').lc_switch();
     
         // triggered each time a field changes status
@@ -261,7 +184,7 @@
 	// clean events log
 	$('#third_div small').click(function() {
 		$('#third_div ul').empty();
-	});*/
+	});
     </script>
     <!-- //////////////////////////////////////////////// -->
 
