@@ -8,6 +8,7 @@ Vanilla javascript. No dependencies. Everything in a **single 7KB** file, all in
 
 
 <br/>
+
 ### Top features list:
 
 - sigle 7KB file, no dependencies, 100% ES6 javascript
@@ -25,6 +26,7 @@ For live demos check: https://lcweb.it/lc-switch-jquery-plugin
 
 
 <br/>
+
 ## Installation & Usage
 
 1. include lc_switch.min.js
@@ -43,6 +45,7 @@ $('input[type=checkbox], input[type=radio]').lc_switch();
 
 
 <br/>
+
 ## Options
 
 Available options with default values
@@ -69,6 +72,7 @@ document.querySelectorAll('input[type=checkbox], input[type=radio]').lc_switch({
 
 
 <br/>
+
 ## Public Functions
 
 Available public functions to be called on *initialized inputs*
@@ -107,6 +111,7 @@ inputs.lcs_destroy();
 
 
 <br/>
+
 ## Public Events
 
 
