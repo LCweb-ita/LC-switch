@@ -1,13 +1,13 @@
 # Superlight pure javascript form switch plugin by LCweb
 
-Give a modern look to your applications and take advantage of javascript events and public functions.<br/>
+Give a modern look to your applications and take advantage of javascript events and public functions.
+
 Vanilla javascript. No dependencies. Everything in a **single 7KB** file, all inclusive!
 
 
 ![](preview.png)
 
 
-<br/>
 ### Top features list:
 
 - sigle 7KB file, no dependencies, 100% ES6 javascript
@@ -20,11 +20,11 @@ Vanilla javascript. No dependencies. Everything in a **single 7KB** file, all in
 - optional custom active color (supporting gradients)
 
 
-Tested on all mordern browsers *(don't ask for old IE support please)*<br/>
+Tested on all mordern browsers *(don't ask for old IE support please)*
 For live demos check: https://lcweb.it/lc-switch-jquery-plugin
 
 
-<br/>
+
 ## Installation & Usage
 
 1. include lc_switch.min.js
@@ -42,7 +42,7 @@ $('input[type=checkbox], input[type=radio]').lc_switch();
 ```
 
 
-<br/>
+
 ## Options
 
 Available options with default values
@@ -68,7 +68,6 @@ document.querySelectorAll('input[type=checkbox], input[type=radio]').lc_switch({
 ```
 
 
-<br/>
 ## Public Functions
 
 Available public functions to be called on *initialized inputs*
@@ -106,7 +105,6 @@ inputs.lcs_destroy();
 ```
 
 
-<br/>
 ## Public Events
 
 
