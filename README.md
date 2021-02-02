@@ -22,7 +22,7 @@ Vanilla javascript. No dependencies. Everything in a **single 7KB** file, all in
 
 
 Tested on all mordern browsers *(don't ask for old IE support please)*<br/>
-For live demos check: https://lcweb.it/lc-switch-jquery-plugin
+For live demos check: https://lcweb.it/lc-switch-javascript-plugin
 
 <br/>
 
