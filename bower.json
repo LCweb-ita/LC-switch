@@ -1,0 +1,25 @@
+{
+  "name": "lc-switch",
+  "description": "Superlight vanilla javascript plugin improving forms look and functionality",
+  "main": [
+  	"lc_switch.min.js"
+  ],
+  "keywords": [
+    "javascript",
+    "css",
+    "lightweight",
+    "forms", 
+    "checkbox",
+      "vanilla-javascript",
+      "pure-javascript",
+      "radio-buttons",
+      "lc-switch",
+  ],
+  "authors": [
+    "Luca Montanari (https://lcweb.it)"
+  ],
+  "license": "MIT",
+  "homepage": "https://lcweb.it/lc-switch-javascript-plugin",
+  "dependencies": {},
+  "ignore": []
+}
