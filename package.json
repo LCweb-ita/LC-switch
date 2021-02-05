@@ -1,0 +1,49 @@
+{
+  "author": "LCweb",
+  "name": "LC switch",
+  "version": "2.0",
+  "description": "Superlight vanilla javascript plugin improving forms look and functionality",
+  "keywords": [
+    "javascript",
+    "css",
+    "lightweight",
+    "forms", 
+    "checkbox",
+      "vanilla-javascript",
+      "pure-javascript",
+      "radio-buttons",
+      "lc-switch",
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LCweb-ita/LC-switch.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "contributors": [
+    {
+      "name": "LCweb-ita",
+      "url": "https://github.com/LCweb-ita"
+    },
+  ],
+  "license": "MIT",
+  "homepage": "https://lcweb.it/lc-switch-javascript-plugin",
+  "bugs": "https://github.com/LCweb-ita/LC-switch/issues",
+  "_extra": {
+    "title": "LC switch",
+    "license": {
+      "type": "MIT",
+      "url": "https://github.com/LCweb-ita/LC-switch/blob/main/LICENSE"
+    },
+    "links": {
+      "download": "https://github.com/LCweb-ita/LC-switch/releases",
+      "docs": "https://github.com/LCweb-ita/LC-switch"
+    },
+    "main": [
+      "lc_switch.min.js",
+    ],
+    "files": [
+      "lc_switch.min.js",
+    ]
+  }
+}
