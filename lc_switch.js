@@ -2,7 +2,7 @@
 	* LC Switch
 	* superlight pure javascript plugin improving forms look and functionality
 	*
-	* @version: 	2.0
+	* @version: 	2.0.1
 	* @author:		Luca Montanari (LCweb)
 	* @website:		https://lcweb.it
 	
@@ -26,11 +26,13 @@
     };
     
     
-    const style_appended = false;
+    let style_appended = false;
     const append_style = () => {
         if(style_appended) {
             return true;    
         }
+        style_appended = true;
+        
         document.head.insertAdjacentHTML('beforeend', 
 `<style>
 .lcs_wrap,
@@ -152,11 +154,11 @@
                 el.tagName != 'INPUT' ||
                 (el.tagName == 'INPUT' && (el.getAttribute('type') != 'checkbox' && el.getAttribute('type') != 'radio'))
             ) {
-                return false;    
+                return;    
             }
 
             if(el.parentNode.classList.length && el.parentNode.classList.contains('lcs_wrap')) {
-                return true;    
+                return;    
             }
 
             // labels structure
@@ -270,12 +272,12 @@
 	window.lcs_off = function(selector, forced_by_lcsOn) {
         maybe_querySelectorAll(selector).forEach(function(el) {
             if(!is_valid_el(el) || (!el.checked && !forced_action)) {
-                return false;    
+                return;    
             }
                
             // if radio - allows only if forced by lcs_on
             if(el.getAttribute('type') == 'radio' && !forced_by_lcsOn && !forced_action) {
-                return false;    
+                return;    
             }
             
             // disable
@@ -306,12 +308,12 @@
     window.lcs_toggle = function(selector) {
         maybe_querySelectorAll(selector).forEach(function(el) {
             if(!is_valid_el(el)) {
-                return false;    
+                return;    
             }
                
             // if radio - allows only if not checked
             if(el.getAttribute('type') == 'radio' && el.checked) {
-                return false;    
+                return;    
             }
             
             (el.checked) ? lcs_off(el) : lcs_on(el);
@@ -324,7 +326,7 @@
 	window.lcs_disable = function(selector) {
         maybe_querySelectorAll(selector).forEach(function(el) {
             if(!is_valid_el(el) || (el.disabled && !forced_action)) {
-                return false;    
+                return;    
             }
             
             // disable
@@ -346,7 +348,7 @@
 	window.lcs_enable = function(selector) {
         maybe_querySelectorAll(selector).forEach(function(el) {
             if(!is_valid_el(el) || (!el.disabled && !forced_action)) {
-                return false;    
+                return;    
             }
             
             // disable
@@ -368,7 +370,7 @@
 	window.lcs_update = function(selector) {
         maybe_querySelectorAll(selector).forEach(function(el) {
             if(!is_valid_el(el)) {
-                return false;    
+                return;    
             }
             
             forced_action = true;
