@@ -2,7 +2,7 @@
 	* LC Switch
 	* superlight pure javascript plugin improving forms look and functionality
 	*
-	* @version: 	2.0.1
+	* @version: 	2.0.2
 	* @author:		Luca Montanari (LCweb)
 	* @website:		https://lcweb.it
 	
@@ -157,6 +157,7 @@
                 return;    
             }
 
+            // do not initialize twice
             if(el.parentNode.classList.length && el.parentNode.classList.contains('lcs_wrap')) {
                 return;    
             }
@@ -257,7 +258,7 @@
             
             // trigger events
             if(!forced_action) {
-                const lcsOnEvent = new Event("lcs-off"),
+                const lcsOnEvent = new Event("lcs-on"),
                       lcsStatusChangeEvent = new Event('lcs-statuschange');
 
                 el.dispatchEvent(lcsOnEvent);
@@ -395,13 +396,13 @@
     const maybe_querySelectorAll = (selector) => {
              
         if(typeof(selector) != 'string') {
-            // supporting jQuery selections
-            if(typeof(selector[0]) != 'undefined') {
-                return Object.values( selector );
-            }
-            
-            return (selector.length) ? selector : [selector];    
+            return (selector instanceof Element) ? [selector] : Object.values(selector);   
         }
+        
+        // clean problematic selectors
+        (selector.match(/(#[0-9][^\s:,]*)/g) || []).forEach(function(n) {
+            selector = selector.replace(n, '[id="' + n.replace("#", "") + '"]');
+        });
         
         return document.querySelectorAll(selector);
     };

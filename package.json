@@ -1,13 +1,13 @@
 {
     "author": "LCweb",
     "name": "lc-switch",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "Superlight vanilla javascript plugin improving forms look and functionality",
     "keywords": [
         "javascript",
         "css",
         "lightweight",
-        "forms", 
+        "forms",
         "checkbox",
         "vanilla-javascript",
         "pure-javascript",
