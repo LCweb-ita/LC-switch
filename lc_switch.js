@@ -257,7 +257,7 @@
             
             // trigger events
             if(!forced_action) {
-                const lcsOnEvent = new Event("lcs-off"),
+                const lcsOnEvent = new Event("lcs-on"),
                       lcsStatusChangeEvent = new Event('lcs-statuschange');
 
                 el.dispatchEvent(lcsOnEvent);
