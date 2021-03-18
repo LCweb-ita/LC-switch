@@ -2,7 +2,7 @@
 	* LC Switch
 	* superlight pure javascript plugin improving forms look and functionality
 	*
-	* @version: 	2.0.2
+	* @version: 	2.0.3
 	* @author:		Luca Montanari (LCweb)
 	* @website:		https://lcweb.it
 	
@@ -258,8 +258,8 @@
             
             // trigger events
             if(!forced_action) {
-                const lcsOnEvent = new Event("lcs-on"),
-                      lcsStatusChangeEvent = new Event('lcs-statuschange');
+                const lcsOnEvent = new Event("lcs-on", {bubbles:true}),
+                      lcsStatusChangeEvent = new Event('lcs-statuschange', {bubbles:true});
 
                 el.dispatchEvent(lcsOnEvent);
                 el.dispatchEvent(lcsStatusChangeEvent);
@@ -294,8 +294,8 @@
             
             // trigger events
             if(!forced_action) {
-                const lcsOffEvent = new Event("lcs-off"),
-                      lcsStatusChangeEvent = new Event('lcs-statuschange');
+                const lcsOffEvent = new Event("lcs-off", {bubbles:true}),
+                      lcsStatusChangeEvent = new Event('lcs-statuschange', {bubbles:true});
 
                 el.dispatchEvent(lcsOffEvent);
                 el.dispatchEvent(lcsStatusChangeEvent);
@@ -335,8 +335,8 @@
             el.previousElementSibling.classList.add('lcs_disabled');
 
             // trigger events
-            const lcsDisabledEvent = new Event("lcs-disabled"),
-                  lcsStatusChangeEvent = new Event('lcs-statuschange');
+            const lcsDisabledEvent = new Event("lcs-disabled", {bubbles:true}),
+                  lcsStatusChangeEvent = new Event('lcs-statuschange', {bubbles:true});
             
             el.dispatchEvent(lcsDisabledEvent);
             el.dispatchEvent(lcsStatusChangeEvent);
@@ -357,8 +357,8 @@
             el.previousElementSibling.classList.remove('lcs_disabled');
 
             // trigger events
-            const lcsEnabledEvent = new Event("lcs-enabled"),
-                  lcsStatusChangeEvent = new Event('lcs-statuschange');
+            const lcsEnabledEvent = new Event("lcs-enabled", {bubbles:true}),
+                  lcsStatusChangeEvent = new Event('lcs-statuschange', {bubbles:true});
             
             el.dispatchEvent(lcsEnabledEvent);
             el.dispatchEvent(lcsStatusChangeEvent);
