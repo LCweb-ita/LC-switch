@@ -34,7 +34,7 @@ For live demos check: https://lcweb.it/lc-switch-javascript-plugin
 
 
 ```
-<script type="text/javascript>
+<script type="text/javascript">
 lc_switch('input[type=checkbox], input[type=radio]');
 </script>
 ```
@@ -75,7 +75,7 @@ Available public functions to be called on *initialized inputs*
 
 
 ```
-<script type="text/javascript>
+<script type="text/javascript">
 const inputs = document.querySelectorAll('input[type=checkbox], input[type=radio]');
 lc_switch(inputs):
 
@@ -112,7 +112,7 @@ lcs_destroy(inputs);
 
 
 ```
-<script type="text/javascript>
+<script type="text/javascript">
 document.querySelectorAll('input[type=checkbox], input[type=radio]').forEach(function(el) {
 
     // triggered each time input status changes (checked and disabled)
