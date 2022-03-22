@@ -213,6 +213,11 @@
             el.addEventListener('change', (e) => {
                 lcs_update(el)
             });
+            if (el.closest('label') !== null) {
+                el.closest('label').addEventListener('click', function (e) {
+                    e.preventDefault();
+                })
+            }
         });
         
         append_style();
