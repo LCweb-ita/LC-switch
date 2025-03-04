@@ -1,13 +1,10 @@
-/* ------------------------------------------------------------------------
-	* LC Switch
-	* superlight pure javascript plugin improving forms look and functionality
-	*
-	* @version: 	2.0.3
-	* @author:		Luca Montanari (LCweb)
-	* @website:		https://lcweb.it
-	
-	* Licensed under the MIT license
-------------------------------------------------------------------------- */
+/**
+ * LC Switch - superlight pure javascript plugin improving forms look and functionality
+ * @version: 2.0.4
+ * @author: Luca Montanari (LCweb)
+ * @website: https://lcweb.it
+ * Licensed under the MIT license
+*/
 
 (function($){
 	"use strict";
@@ -47,7 +44,7 @@
     vertical-align: middle;
 }
 .lcs_wrap input {
-	display: none;	
+	display: none !important;	
 }
 .lcs_switch {
 	display: inline-block;	
@@ -396,7 +393,19 @@
     const maybe_querySelectorAll = (selector) => {
              
         if(typeof(selector) != 'string') {
-            return (selector instanceof Element) ? [selector] : Object.values(selector);   
+            if(selector instanceof Element) { // JS or jQuery 
+                return [selector];
+            }
+            else {
+                let to_return = [];
+                
+                for(const obj of selector) {
+                    if(obj instanceof Element) {
+                        to_return.push(obj);    
+                    }
+                }
+                return to_return;
+            }
         }
         
         // clean problematic selectors
