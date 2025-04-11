@@ -219,6 +219,13 @@
             el.addEventListener('change', (e) => {
                 lcs_update(el)
             });
+            
+            // improve compatibility with systems placing checkboxes into the LABEL tag
+            if(el.closest('label') !== null) {
+                el.closest('label').addEventListener('click', (e) => {
+                    e.preventDefault();
+                });
+            }
         });
         
         append_style();
