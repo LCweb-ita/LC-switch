@@ -1,6 +1,6 @@
 /**
  * LC Switch - superlight pure javascript plugin improving forms look and functionality
- * @version: 2.0.4
+ * @version: 2.0.5
  * @author: Luca Montanari (LCweb)
  * @website: https://lcweb.it
  * Licensed under the MIT license
@@ -30,8 +30,7 @@
         }
         style_appended = true;
         
-        document.head.insertAdjacentHTML('beforeend', 
-`<style>
+        const css = `
 .lcs_wrap,
 .lcs_wrap * {
     user-select: none;
@@ -133,8 +132,18 @@
 }
 .lcs_compact .lcs_switch.lcs_on .lcs_cursor {
 	left: 28px;
-}
-</style>`);
+}`;
+        
+        if('adoptedStyleSheets' in document) {
+            const sheet = new CSSStyleSheet();
+            sheet.replaceSync(css);
+            document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
+        } 
+        else {
+            const style = document.createElement('style');
+            style.textContent = css;
+            document.head.appendChild(style);
+        }
     };
     
     
