@@ -1,6 +1,6 @@
 /**
  * LC Switch - superlight pure javascript plugin improving forms look and functionality
- * @version: 2.0.5
+ * @version: 2.1.0
  * @author: Luca Montanari (LCweb)
  * @website: https://lcweb.it
  * Licensed under the MIT license
@@ -193,7 +193,7 @@
             
             wrapper.classList.add('lcs_wrap');
             wrapper.innerHTML = 
-            '<div class="lcs_switch '+ classes +'" '+ custom_on_col_attr +' '+ custom_style +'>' +
+            '<div class="lcs_switch '+ classes +'" role="button" tabindex="0" '+ custom_on_col_attr +' '+ custom_style +'>' +
                 '<div class="lcs_cursor"></div>' +
                 on_label + off_label +
             '</div>';
@@ -214,6 +214,12 @@
                 
                 if(!target.classList.contains('lcs_disabled')) {
                     lcs_toggle(el);
+                }
+            });
+            wrapper.querySelector('.lcs_switch').addEventListener('keydown', (e) => { // accessibility's sake
+                if(e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    e.target.click();
                 }
             });
             el.addEventListener('change', (e) => {
