@@ -1,6 +1,6 @@
 /**
  * LC Switch - superlight pure javascript plugin improving forms look and functionality
- * @version: 2.1.0
+ * @version: 2.1.1
  * @author: Luca Montanari (LCweb)
  * @website: https://lcweb.it
  * Licensed under the MIT license
@@ -40,6 +40,8 @@
 	direction: ltr;
 	height: 28px;
     width: 73px;
+    overflow: hidden;
+    line-height: 0;
     vertical-align: middle;
 }
 .lcs_wrap input {
